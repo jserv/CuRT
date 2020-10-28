@@ -7,7 +7,7 @@ SECTIONS
 
 	. = ALIGN(4);
 	.text : 
-	{ 	../../arch/arm/mach-pxa/start.o (.text)
+	{ 	start.o (.text)
 		*(.text) 
 	}
 	. = ALIGN(4);

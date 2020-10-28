@@ -7,17 +7,17 @@
 /* --------------------------------------- */
 /** Memory Controller */
 #define MSC_BASE	0x48000000
-#define MSC_REG(_x_)	*(vulong *)(MSC_BASE + _x_)	
+#define MSC_REG(_x_)	*(vulong *)(MSC_BASE + _x_)
 
 
 //---------------------------------------
 /** UARTs */
 #define FF_UART_BASE		0x40100000	/* Full Function UART Base Address */
-#define FF_UART_REG(_x_)	*(vulong *)(FF_UART_BASE + _x_)	
+#define FF_UART_REG(_x_)	*(vulong *)(FF_UART_BASE + _x_)
 #define BT_UART_BASE		0x40200000	/* Bluetooth UART Base Address */
-#define BT_UART_REG(_x_)	*(vulong *)(BT_UART_BASE + _x_)	
+#define BT_UART_REG(_x_)	*(vulong *)(BT_UART_BASE + _x_)
 #define STD_UART_BASE		0x40700000	/* Standard UART Base Address */
-#define STD_UART_REG(_x_)	*(vulong *)(STD_UART_BASE + _x_)	
+#define STD_UART_REG(_x_)	*(vulong *)(STD_UART_BASE + _x_)
 
 #define UART_RBR	0x00	/* Receive Buffer Register (read only) */
 #define UART_THR	0x00	/* Transmit Holding Register (write only) */
@@ -35,8 +35,8 @@
 
 /* --------------------------------------- */
 /** OS Timer */
-#define TMR_BASE	0x40A00000   
-#define TMR_REG(_x_)	*(vulong *)(TMR_BASE + _x_)	
+#define TMR_BASE	0x40A00000
+#define TMR_REG(_x_)	*(vulong *)(TMR_BASE + _x_)
 #define TMR_OSMR0	0x00	/* OS timer match registers<3:0> */
 #define TMR_OSMR1	0x04	/* */
 #define TMR_OSMR2	0x08	/* */
@@ -50,7 +50,7 @@
 /* --------------------------------------- */
 /** Interrupt Control */
 #define INT_BASE	0x40D00000	/* Interrupt controller IRQ pending register */
-#define INT_REG(_x_)	*(vulong *)(INT_BASE + _x_)	
+#define INT_REG(_x_)	*(vulong *)(INT_BASE + _x_)
 #define INT_ICIP	0x00	/* Interrupt controller IRQ pending register */
 #define INT_ICMR	0x04	/* Interrupt controller mask register */
 #define INT_ICLR	0x08	/* Interrupt controller level register */

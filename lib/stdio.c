@@ -167,12 +167,12 @@ static void _PrintHex(char *fmt, int l)
 {
 	int i, j;
 	char c, *s = fmt, tol[10];
-	bool flag0 = false, flagl = false;
+	bool flag0 = false;
 	long flagcnt = 0;
 	bool leading_zero = true;
 	char uHex, lHex;
-	int cnt;	/* note: the format like "% 5x" only prints
-			   the number of 5. */
+
+	/* note: the format like "% 5x" only prints the number of 5. */
 
 	/* format like "%081" is interpreted for '0', '8', 'l'
 	 * individually. */
@@ -189,8 +189,6 @@ static void _PrintHex(char *fmt, int l)
 		}
 		else if (c == '0')
 			flag0 = true;
-		else if (c == 'l')
-			flagl = true;
 		else
 			continue;
 	}
@@ -224,7 +222,7 @@ static void _PrintHex(char *fmt, int l)
 		}
 
 		/* byte-level data, the output Hex */
-		for (cnt = 0, i = (8 - flagcnt) / 2; i < 4; i++) {
+		for (i = (8 - flagcnt) / 2; i < 4; i++) {
 			c = s[i];
 				
 			/* get upper 4 bits and lower 4 bits. */
@@ -411,7 +409,6 @@ unsigned long strtoul(const char *str, char **endptr, int requestedbase)
 	int base = 10;
 	int nchars = 0;
 	int leadingZero = 0;
-	unsigned char strtoul_err = 0;
 	
 	while ((c = *str) != 0) {
 		if (nchars == 0 && c == '0') {
@@ -438,11 +435,9 @@ unsigned long strtoul(const char *str, char **endptr, int requestedbase)
 			digit = c - 'A' + 10;
 		}
 		else {
-			strtoul_err = 3;
 			return 0;
 		}
 		if (digit >= base) {
-			strtoul_err = 4;
 			return 0;
 		}
 		num *= base;
